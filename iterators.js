@@ -6,12 +6,12 @@
  * eg: engineer(["zainab","omar","zahraa"]) => eng.zainab, eng.omar, eng.zahraa
  ************************************/
 
-const engineer = (array) => array.forEach(e => console.log("eng."+e));
-  // input code here
-let arrN=["zainab","omar","zahraa"];
+const engineer = (array) => array.forEach((e) => console.log("eng." + e));
+// input code here
+let arrN = ["zainab", "omar", "zahraa"];
 engineer(arrN);
-let arr=[90,100,80,70,60];
-let mar = 20;
+let arr = [90, 100, 80, 70, 60];
+let mar = 80;
 
 /*************************************
  * Challenge 2: toKWD(wallets)
@@ -26,8 +26,9 @@ let mar = 20;
  *   kwd = usd * 0.30
  ************************************/
 
-const toKWD =(array)=>array.map(e=> e*0.3);
+const toKWD = (array) => array.map((e) => e * 0.3);
 
+console.log("To KWD " + toKWD(arr));
 /**************************************
  * Challenge 3: richestWallet(wallets,maxAmount)
  *
@@ -38,8 +39,10 @@ const toKWD =(array)=>array.map(e=> e*0.3);
  *   that exceed the maxAmount
  ***************************************/
 
-const richestWallet = (wallets,maxAmount)=> wallets.filter(e=> e<maxAmount);
+const richestWallet = (wallets, maxAmount) =>
+  wallets.filter((e) => e > maxAmount);
 
+console.log(richestWallet(arr, mar));
 /******************************************
  * Challenge 4: makeLiteralGrades(grades)
  *
@@ -55,18 +58,19 @@ const richestWallet = (wallets,maxAmount)=> wallets.filter(e=> e<maxAmount);
  * Example: makeLiteralGrades([90, 70, 40]) should return ["A", "C", "F"]
  *******************************************/
 
-const makeLiteralGrades = (grades) => grades.map(e=> {
-  if(e >=90){
-return e ="A"
-  }else if(e>=80){
-    return e ="B"
-  }else if(e>=70){
-    return e= "C";
-  }else if(e>=60){
-return e="D";
-  }
-  else {
-    return e ="F";
-  }
-})
+const makeLiteralGrades = (grades) =>
+  grades.map((grade) => {
+    if (grade >= 90) {
+      return "A";
+    } else if (grade >= 80) {
+      return "B";
+    } else if (grade >= 70) {
+      return "C";
+    } else if (grade >= 60) {
+      return "D";
+    } else {
+      return "F";
+    }
+  });
+
 console.log(makeLiteralGrades(arr));
